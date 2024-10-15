@@ -36,5 +36,5 @@ ansible all -m ping
 ````
 ### run playbook
 ````
-ansible-playbook playbook.yaml
+ansible-playbook nginx.yaml
 ````
