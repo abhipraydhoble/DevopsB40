@@ -1,4 +1,4 @@
-# $${\color {red} textbf {CDEC Batch B40}}$$
+# $${\color {red} \textbf {CDEC Batch B40}}$$
 
 ## Script to install httpd
 
