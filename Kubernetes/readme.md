@@ -10,3 +10,11 @@
 
 ````
 
+### Basic k8s commands
+
+````
+kubectl apply -f deployment.yaml
+````
+````
+kubectl get pods
+````
