@@ -18,4 +18,4 @@ kubectl apply -f deployment.yaml
 ````
 kubectl get pods
 ````
-**Kubernetes is a container orchestration tool**
+Kubernetes is a container orchestration tool
