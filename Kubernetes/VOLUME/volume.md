@@ -1,4 +1,8 @@
+## k8s volume:
 
+### 1. emptyDir
+- emptyDir volume is a temporary volume and it is  initially empty.
+- When a Pod is removed from a node for any reason, the data in the emptyDir is deleted permanently.
 ````
 apiVersion: v1
 kind: Pod
