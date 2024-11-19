@@ -23,6 +23,7 @@ spec:
 
 
 # hostpath
+- A hostPath volume mounts a file or directory from the host node's filesystem into your Pod
 
 ````
 apiVersion: v1
