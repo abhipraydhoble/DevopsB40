@@ -1,3 +1,5 @@
+### Node Port Range 30000 - 32767
+
 ````
 apiVersion: apps/v1
 kind: Deployment
@@ -31,6 +33,24 @@ spec:
       port: 80
       targetPort: 80
   type: NodePort
+````
+
+**using NodePort**
+````
+apiVersion: v1
+kind: Service
+metadata:  
+  name: my-nodeport-service
+spec:
+  selector:    
+    app: my-app
+  type: NodePort
+  ports:  
+  - name: http
+    port: 80
+    targetPort: 80
+    nodePort: 30036
+    protocol: TCP
 ````
 
 **Commands:**
