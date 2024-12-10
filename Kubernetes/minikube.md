@@ -65,7 +65,7 @@ minikube stop
 
 --------------------------------------------
 
-## {\color {blue}\textbf {Ingress On Minikube}}$$
+## $${\color {blue}\textbf {Ingress On Minikube}}$$
 ````
 https://kubernetes.io/docs/tasks/access-application-cluster/ingress-minikube/
 ````
