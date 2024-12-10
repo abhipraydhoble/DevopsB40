@@ -61,3 +61,9 @@ minikube start
 ````
 minikube stop
 ````
+
+
+--------------------------------------------
+````
+https://kubernetes.io/docs/tasks/access-application-cluster/ingress-minikube/
+````
