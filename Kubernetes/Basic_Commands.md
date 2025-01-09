@@ -15,6 +15,12 @@ kubectl expose pod <pod-name> --type=NodePort --port=80
 ````
 kubectl apply -f filename.yaml
 ````
+### Command to create the pod
+````
+kubectl create -f filenmae.yaml
+````
+### Difference between the "kubectl apply" and "kubectl create"command
+![image](https://github.com/user-attachments/assets/1a98a3b4-deae-4c8e-a22d-5d2b1577e165)
 ## Check the pod status
 ````
 kubectl get pods
