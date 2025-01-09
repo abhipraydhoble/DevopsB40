@@ -1,17 +1,17 @@
-# Kubernetes Basic Commands
+# KUBERNETES BASIC COMMANDS
 
 
 ## PODS
 
-## Command to create pod [Imperative method]
+### Command to create pod [Imperative method]
 ````
 kubectl run pod_name --image= image_name
 ````
-## Exopose the pod using kubectl expose [Imperative form to create the service]
+### Exopose the pod using kubectl expose [Imperative form to create the service]
 ````
 kubectl expose pod <pod-name> --type=NodePort --port=80
 ````
-## Command to create the pod [declarative method]
+### Command to create the pod [declarative method]
 ````
 kubectl apply -f filename.yaml
 ````
@@ -19,31 +19,31 @@ kubectl apply -f filename.yaml
 ````
 kubectl get pods
 ````
-## Command to check all object status
+### Command to check all object status
 ````
 kubectl get all
 ````
-## Get specific Pod with detailed information 
+### Get specific Pod with detailed information 
 ````
 kubectl get pod pod_name -o wide 
 ````
-## Describe a specific pod
+### Describe a specific pod
 ````
 kubectl describe pod pod_name
 ````
-## Delete a specific pod
+### Delete a specific pod
 ````
 kubectl delete pod pod_name
 ````
-## Delete all the pods
+### Delete all the pods
 ````
 kubectl delete pods --all
 ````
-## View the pod logs
+### View the pod logs
 ````
 kubectl logs pod_name
 ````
-## Execute a command inside pod 
+### Execute a command inside pod 
 ````
 kubectl exec -it pod_name --command
 ````
@@ -55,25 +55,25 @@ kubectl exec -it pod_name --/bin/bash
 ````
 kubectl exec -it pod_name --ls /app
 ````
-## Delete all the create pods and services,etc
+### Delete all the create pods and services,etc
 ````
 kubectl delete all --all
 ````
-## To run all the .yaml files [. is the current path where the .yaml files present]
+### To run all the .yaml files [. is the current path where the .yaml files present]
 ````
 kubectl apply -f .
 ````
 ## SERVICES
 
-## List services
+### List services
 ````
 kubectl get svc
 ````
-## Describe a services
+### Describe a services
 ````
 kubectl describe service service_name
 ````
-## Delete the service
+### Delete the service
 ````
 kubectl delete service <service-name>
 ````
