@@ -6,26 +6,12 @@ Instance Size: t2.large with 2 CPUs, 32 GB Storage
 
 ## Step 2 : Install Docker
 ````
-sudo apt update
-````
-
-````
+sudo apt update -y
 sudo apt install docker.io -y
-````
-````
 sudo systemctl start docker
-````
-````
 sudo systemctl enable docker
-````
-Executing the Docker Command Without Sudo
-````
 sudo usermod -aG docker ubuntu
-````
-````
 newgrp docker
-````
-````
 sudo chmod 777 /var/run/docker.sock
 ````
 ## Install kubectl
