@@ -7,7 +7,7 @@
 ````
 kubectl run pod_name --image= image_name
 ````
-### Exopose the pod using kubectl expose [Imperative form to create the service]
+### Expose the pod using kubectl expose [Imperative form to create the service]
 ````
 kubectl expose pod <pod-name> --type=NodePort --port=80
 ````
