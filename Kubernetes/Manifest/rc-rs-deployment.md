@@ -1,6 +1,6 @@
 # Replication Controller
 
-````
+```yaml
 apiVersion: v1
 kind: ReplicationController
 metadata:
@@ -22,7 +22,7 @@ spec:
       image: abhipraydh96/green:latest
       ports:
         - containerPort: 80
-````
+```
 ## apply manifest file to create rc
 ````
 kubectl apply -f rc.yaml
@@ -38,7 +38,7 @@ kubectl get pods
 
 ## ReplicaSet
 
-````
+```yaml
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
@@ -60,7 +60,7 @@ spec:
       image: abhipraydh96/green:latest
       ports:
         - containerPort: 80
-````
+```
 
 ## apply manifest file to create rs
 ````
@@ -77,7 +77,7 @@ kubectl get pods
 
 # Deployment
 
-````
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -99,7 +99,8 @@ spec:
       image: abhipraydh96/green:latest
       ports:
         - containerPort: 80
-````
+```
+
 ## apply manifest file to create deployment
 ````
 kubectl apply -f deploy.yaml
