@@ -1,5 +1,9 @@
 # KUBERNETES BASIC COMMANDS
 
+### Comand to check the nodes in k8's cluster
+````
+kubectl get nodes
+````
 
 ## PODS
 
