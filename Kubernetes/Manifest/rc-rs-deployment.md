@@ -115,7 +115,6 @@ kubectl get pods
 ````
 
 ## Statefulset
-## Statefulset
 - This is useful for managing applications that need persistent storage or a stable, unique network identity.
 **statefulset provides**
 - Stable, unique network identifiers.
