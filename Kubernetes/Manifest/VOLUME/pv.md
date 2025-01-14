@@ -1,6 +1,6 @@
 ## 1. Persistent Volume 
 - PV is like a permanent storage which have a lifecycle independent  of any individual Pod.
-````
+```yaml
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -15,12 +15,12 @@ spec:
   storageClassName: manual
   hostPath:
     path: "/mnt/data"
-````
+```
 ## PVC
 - A PersistentVolumeClaim (PVC) is a request for storage by a user.
 
   
-````
+```yaml
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -32,10 +32,10 @@ spec:
     requests:
       storage: 5Gi
   storageClassName: manual
-````
+```
 
 
-````
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -51,4 +51,4 @@ spec:
     - name: pv-example
       persistentVolumeClaim:
         claimName: pvc-example
-````
+```
