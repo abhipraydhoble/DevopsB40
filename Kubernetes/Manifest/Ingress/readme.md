@@ -150,7 +150,7 @@ kubectl apply -f ingress.yaml
 ### 4. **Update `/etc/hosts`**
 Add the Ingress Controller’s external IP to your `/etc/hosts` file:
 ```bash
-<INGRESS-EXTERNAL-IP> example.com
+<INGRESS-EXTERNAL-IP> abhidhoble.online
 ```
 Find the external IP of the Ingress Controller:
 ```bash
@@ -162,8 +162,8 @@ kubectl get svc -n ingress-nginx
 ## **Testing**
 
 1. Access the application in your browser or via `curl`:
-   - `http://example.com/blue` → Displays the Blue version.
-   - `http://example.com/green` → Displays the Green version.
+   - `http:/abhidhoble.online/blue` → Displays the Blue version.
+   - `http://abhidhoble.online/green` → Displays the Green version.
 
 2. Verify path-based routing is working correctly.
 
