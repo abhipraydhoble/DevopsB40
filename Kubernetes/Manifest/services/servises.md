@@ -7,8 +7,8 @@
 4. ExternalName
 
 ### ClusterIp:
--It is default service type which is accessible within cluster 
--Suitable for internat communication between services within cluster
+- It is default service type which is accessible within cluster 
+- Suitable for internat communication between services within cluster
 
 ### NodePort:
 - The service is accessible externally 
