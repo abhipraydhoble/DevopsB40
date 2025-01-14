@@ -2,7 +2,7 @@
 - Store non-sensitive configuration data, such as environment variables or configuration files, as key-value pairs
 
 #### vim configmap.yaml
-````
+```yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -10,9 +10,9 @@ metadata:
 data:
   APP_ENV: production
   APP_PORT: "8080"
-````
+```
 #### vim deployment.yaml
-````
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -33,12 +33,12 @@ spec:
           envFrom:
             - configMapRef:
                 name: app-config
-````
+```
 ## Secrrets
 - Store sensitive data, such as passwords, API keys
 
 ##### vim secrets.yaml
-````
+```yaml
 apiVersion: v1
 kind: Secret
 metadata:
@@ -46,10 +46,10 @@ metadata:
 type: Opaque
 data:
   DB_PASSWORD: cGFzc3dvcmQ=  # Base64 encoded value of "password"
-````
+```
 
 ##### deployment.yaml
-````
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -73,4 +73,4 @@ spec:
                 secretKeyRef:
                   name: app-secrets
                   key: DB_PASSWORD
-````
+```
