@@ -2,12 +2,12 @@
 - In Kubernetes, namespaces provide a mechanism for isolating groups of resources within a single cluster.
 
 ## create namespace using manifest
-````
+```yaml
 apiVersion: v1
 kind: Namespace
 metadata:
  name: prod
-````
+```
 
 ````
 kubectl apply -f ns.yaml
@@ -17,7 +17,7 @@ kubectl apply -f ns.yaml
 kubectl get ns
 ````
 **Create Pod in specific namespace**
-````
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -29,7 +29,7 @@ spec:
     image: nginx:1.14.2
     ports:
     - containerPort: 80
-````
+```
 ````
 kubectl apply -f pod.yaml
 ````
