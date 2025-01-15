@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
         - name: studentapp-container
-          image: pradip5494/backend-student
+          image: abhipraydh96/backend-student:latest
           ports:
             - containerPort: 8080
           resources:
