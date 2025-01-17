@@ -1,3 +1,5 @@
+## $${color{blue} \textbf {Guide to 3-tier architecture on Kubernetes}}$$
+
 ## Step 1: Create Database
 1. Set up the database.
 2. Ensure the database is accessible with the following details:
