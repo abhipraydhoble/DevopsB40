@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome K8s 3-Tier App</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            color: white;
+            text-align: center;
+            padding-top: 50px;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        h1 {
+            margin-bottom: 20px;
+            animation: fadeInDown 2s ease-in-out;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .welcome-message {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            animation: fadeInUp 2s ease-in-out;
+        }
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .k8s-wheel {
+            margin: 50px auto;
+            width: 100px;
+            height: 100px;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg');
+            background-size: cover;
+            border-radius: 50%;
+            animation: spin 3s linear infinite;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        .k8s-wheel:hover {
+            transform: scale(1.2);
+            transition: transform 0.3s ease-in-out;
+        }
+        .btn-lg {
+            background: linear-gradient(135deg, #ff7eb3, #ff758c);
+            color: white;
+            font-weight: bold;
+            border: none;
+            transition: transform 0.2s ease-in-out, background 0.2s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .btn-lg:hover {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, #ff758c, #ff4e68);
+        }
+        footer {
+            margin-top: 50px;
+            background: linear-gradient(90deg, #0047ab, #6a11cb);
+            color: white;
+            padding: 15px 0;
+            text-shadow: 1px 1px 2px black;
+        }
+        .container {
+            max-width: 90%;
+            margin: auto;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 24px;
+            }
+            .btn-lg {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Kubernetes 3-Tier App</h1>
+        <div class="k8s-wheel"></div>
+        <div class="welcome-message">Experience Seamless Application Deployment</div>
+        <a href="http://a3d61cd8688e7440c90e802a7b43823d-922453956.ap-southheast-1.elb.amazonaws.com:8080/studentapp/" class="btn btn-lg">
+            <i class="fas fa-rocket"></i> Explore the Magic
+        </a>
+    </div>
+    <footer>
+        &copy; Proudly Built with Kubernetes | Crafted by Abhipray Dhoble
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

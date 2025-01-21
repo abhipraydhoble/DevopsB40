@@ -1,0 +1,43 @@
+### 1. **Blue Deployment and Service**
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-blue
+  labels:
+    app: your-app
+    version: blue
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: your-app
+      version: blue
+  template:
+    metadata:
+      labels:
+        app: your-app
+        version: blue
+    spec:
+      containers:
+      - name: app-blue
+        image: abhipraydh96/blue
+        ports:
+        - containerPort: 80
+...
+---
+# blue-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-blue-service
+spec:
+  selector:
+    app: your-app
+    version: blue
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: ClusterIP
+...

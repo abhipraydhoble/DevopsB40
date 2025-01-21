@@ -1,0 +1,43 @@
+###StorageClass
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: ebs-sc
+provisioner: kubernetes.io/aws-ebs
+parameters:
+  type: gp2
+  fsType: ext4
+...
+###PVC
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-ebs
+spec:
+  storageClassName: ebs-sc
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+...
+###adding the storage to the pod
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ebs-pod
+spec:
+  containers:
+    - name: app-container
+      image: nginx
+      volumeMounts:
+        - mountPath: "/mnt/storage"
+          name: ebs-volume
+  volumes:
+    - name: ebs-volume
+      persistentVolumeClaim:
+        claimName: pvc-ebs
+...

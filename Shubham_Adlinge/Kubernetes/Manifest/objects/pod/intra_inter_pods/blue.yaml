@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: blue-pod
+  labels:
+    app: blue
+spec:
+  containers:
+    - name: blue-container
+      image: abhipraydh96/blue:latest
+      ports:
+        - containerPort: 80

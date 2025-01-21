@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: studentapp
+  labels:
+    app: studentapp
+spec:
+   replicas: 3
+  selector:
+    matchLabels:
+      app: studentapp
+      
+  template:
+    metadata:
+      labels:
+        app: studentapp
+    spec:
+      containers:
+        - name: studentapp-container
+          image: abhipraydh96/backend-b45:v2
+          ports:
+            - containerPort: 8080
+          resources:
+            limits:
+              cpu: 500m
+              memory: 500Mi
+            requests:
+              cpu: 400m
+              memory: 400Mi
+
