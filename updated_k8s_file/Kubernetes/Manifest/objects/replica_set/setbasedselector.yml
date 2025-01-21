@@ -1,0 +1,71 @@
+### operator In
+###works:The Service will forward traffic to all Pods with app=nginx or app=redis.
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  selector:
+    matchExpressions:
+      - key: app
+        operator: In
+        values: 
+          - nginx
+          - redis
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+...
+###operator NotIn
+##works: This Deployment will manage Pods with any environment label value other than production or staging.
+##For example, Pods with environment=testing will be managed.
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment
+spec:
+  replicas: 2
+  selector:
+    matchExpressions:
+      - key: environment
+        operator: NotIn
+        values:
+          - production
+          - staging
+  template:
+    metadata:
+      labels:
+        app: my-app
+        environment: testing
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+...
+### operator Exists
+###This Deployment will manage Pods with any environment label value other than production or staging. 
+###For example, Pods with environment=testing will be managed.
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: my-job
+spec:
+  template:
+    metadata:
+      labels:
+        task: batch-process
+    spec:
+      containers:
+        - name: processor
+          image: busybox
+          command: ["echo", "Processing"]
+      restartPolicy: Never
+  selector:
+    matchExpressions:
+      - key: environment
+        operator: Exists
+...

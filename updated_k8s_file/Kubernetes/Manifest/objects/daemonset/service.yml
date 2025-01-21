@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  selector:
+    app: nginx  # This label matches the label in the Deployment pods
+  ports:
+    - protocol: TCP
+      port: 80       # The port exposed by the service
+      targetPort: 80  # The port that the container listens on
+  type: ClusterIP  # The default type; accessible only within the cluster
+...

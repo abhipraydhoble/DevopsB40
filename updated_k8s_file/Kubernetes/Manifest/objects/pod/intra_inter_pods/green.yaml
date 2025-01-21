@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: green-pod
+  labels:
+    app: green
+spec:
+  containers:
+    - name: green-container
+      image: abhipraydh96/green:latest
+      ports:
+        - containerPort: 80

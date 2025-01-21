@@ -1,0 +1,44 @@
+### 2. **Green Deployment and Service**
+# green-deployment.yaml
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-green
+  labels:
+    app: your-app
+    version: green
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: your-app
+      version: green
+  template:
+    metadata:
+      labels:
+        app: your-app
+        version: green
+    spec:
+      containers:
+      - name: app-green
+        image: abhipraydh96/green
+        ports:
+        - containerPort: 80
+...
+---
+# green-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-green-service
+spec:
+  selector:
+    app: your-app
+    version: green
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: ClusterIP
+...

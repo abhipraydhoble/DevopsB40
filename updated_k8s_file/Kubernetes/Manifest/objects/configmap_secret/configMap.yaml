@@ -1,0 +1,39 @@
+## Creating the ConfigMap manifest file
+#### vim configmap.yaml
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  APP_ENV: production
+  APP_PORT: "8080"
+...
+## Calling the ConfigMap in the deployment file
+#### vim deployment.yaml
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - name: app-container
+          image: nginx
+          envFrom:
+            - configMapRef:
+                name: app-config
+...
+
+
+
+
