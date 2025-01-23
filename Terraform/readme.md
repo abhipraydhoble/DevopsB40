@@ -1,10 +1,10 @@
-$${\color{blue}\textbf{What is IAC}}$$
+### $${\color{blue}\textbf{What is IAC}}$$
 
 - Infrastructure as Code (IaC) means managing infrastructure using code instead of doing it manually.
 - It saves time, reduces errors, and makes it easier for developers to focus on their work.
 - Companies use IaC to save money, lower risks, and respond faster to new opportunities
 
-$${\color{blue}\textbf{How Infrastructure As A Code (IAC) Works}}$$
+### $${\color{blue}\textbf{How Infrastructure As A Code (IAC) Works}}$$
 
 - IaC with Terraform and AWS means using code to manage AWS resources (like EC2, S3, etc.) instead of doing it manually.
 - You write configuration files, store them in version control, and use Terraform to automatically create and manage your infrastructure.
@@ -15,7 +15,7 @@ $${\color{blue}\textbf{How Infrastructure As A Code (IAC) Works}}$$
 ![image](https://github.com/user-attachments/assets/3ce660b5-801c-422d-937f-5db81370a094)
 
 
-$${\color{blue}\textbf{How does Terraform work?}}$$
+### $${\color{blue}\textbf{How does Terraform work?}}$$
 
 ---
 
@@ -52,7 +52,7 @@ $${\color{blue}\textbf{How does Terraform work?}}$$
 
 
 ---
-### Terraform Workflow
+
 
 ![image](https://github.com/user-attachments/assets/83c85698-f5b9-43b7-80fe-85ecb229cd8a)
 
