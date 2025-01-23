@@ -12,8 +12,6 @@
 
 
 
-![image](https://github.com/user-attachments/assets/3ce660b5-801c-422d-937f-5db81370a094)
-
 
 ### $${\color{blue}\textbf{How does Terraform work?}}$$
 
