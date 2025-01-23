@@ -346,65 +346,119 @@ The Google Cloud Terraform Provider is used to configure your Google Cloud Platf
 
 ![image](https://github.com/user-attachments/assets/fda973da-a60d-4831-a473-d890fc0db479)
 -------
+$${\color{red}\textbf{What is IAC}}$$
 
-$${\color{red}\textbf{# What is IAC}}$$
+Infrastructure as code (IaC) is the ability to provision and support your computing infrastructure using code instead of manual processes and settings. Any application environment requires many infrastructure components like operating systems, database connections, and storage. Developers have to regularly set up, update, and maintain the infrastructure to develop, test, and deploy applications. 
 
-Infrastructure as code (IaC) allows provisioning and managing infrastructure using code instead of manual processes. It automates infrastructure setup, reduces errors, and improves efficiency. IaC defines the desired state of infrastructure, enabling cost control, risk reduction, and agility.
+Manual infrastructure management is time-consuming and prone to error—especially when you manage applications at scale. Infrastructure as code lets you define your infrastructure's desired state without including all the steps to get to that state. It automates infrastructure management so developers can focus on building and improving applications instead of managing environments. Organizations use infrastructure as code to control costs, reduce risks, and respond with speed to new business opportunities.
 
-$${\color{red}\textbf{## How IaC Works}}$$
+$${\color{red}\textbf{How Infrastructure As A Code (IAC) Works}}$$
 
-IaC describes system architecture like software code. It uses configuration files to manage resources such as servers, networking, and storage in a repeatable way. Popular languages include Python, Java, or specific DSLs. IaC is maintained under source control, enabling error checking and versioning.
+Much like software code describes an application and how it works, infrastructure as code (IaC) describes a system architecture and how it works. An infrastructure architecture contains resources such as servers, networking, operating systems, and storage. IaC controls virtualized resources by treating configuration files like source code files. You can use it to manage infrastructure in a codified, repeatable way. 
 
-$${\color{red}\textbf{### Approaches to IaC}}$$
+IaC configuration management tools use different language specifications. You can develop IaC similar to application code in Python or Java. You also write the IaC in an integrated development environment (IDE) with built-in error checking. And you can maintain it under source control with commits at each code change. IaC files are included as part of the wider codebase.
 
-- **Declarative:** Defines the desired end state.
-- **Imperative:** Defines the steps to achieve the end state.
+$${\color{red}\textbf{Approaches to IaC}}$$
 
-$${\color{red}\textbf{## Benefits of IaC}}$$
+There are two different approaches to infrastructure as code.
 
-1. **Automation:** Speeds up environment setup.
-2. **Reproducibility:** Duplicates environments easily.
-3. **Error Reduction:** Minimizes configuration errors.
-4. **Version Control:** Rolls back to stable versions.
-5. **Scalability:** Iterates on best-practice environments.
+$${\color{red}\textbf{Declarative}}$$
 
-$${\color{red}\textbf{# What is Terraform?}}$$
+Declarative IaC allows a developer to describe resources and settings that make up the end state of a desired system. The IaC solution then creates this system from the infrastructure code. This makes declarative IaC simple to use, as long as the developer knows which components and settings they need to run their application.
 
-Terraform is an open-source IaC tool by HashiCorp that supports multi-cloud and on-premises infrastructure. It uses HCL to define resources and provides a workflow to provision and manage infrastructure.
+$${\color{red}\textbf{Imperative}}$$
 
-$${\color{red}\textbf{## How Terraform Works}}$$
+Imperative IaC allows a developer to describe all the steps to set up the resources and get to the desired system and running state. While it isn’t as simple to write imperative IaC as declarative IaC, the imperative approach becomes necessary in complex infrastructure deployments. This is especially true when the order of events is critical.
 
-1. **Write:** Define resources in configuration files.
-2. **Plan:** Preview execution changes.
-3. **Apply:** Execute changes to create or update infrastructure.
+![image](https://github.com/user-attachments/assets/3ce660b5-801c-422d-937f-5db81370a094)
 
-$${\color{red}\textbf{### Terraform vs. CloudFormation}}$$
-
-| Feature               | Terraform                     | CloudFormation              |
-|-----------------------|-------------------------------|-----------------------------|
-| **Multi-Cloud**       | Yes                           | No (AWS only)               |
-| **Language**          | HCL                           | JSON/YAML                   |
-| **State Management**  | External (e.g., S3)           | Internal                    |
-| **Extensibility**     | Wide plugin support           | AWS-specific                |
-| **Drift Detection**   | Built-in                      | Limited                     |
-
-$${\color{red}\textbf{### Terraform vs. Ansible}}$$
-
-| Feature               | Terraform                     | Ansible                     |
-|-----------------------|-------------------------------|-----------------------------|
-| **Purpose**           | Provisioning                 | Configuration               |
-| **Language**          | HCL                           | YAML                        |
-| **State Management**  | Tracks state                 | Stateless                   |
-| **Execution Model**   | Declarative                  | Procedural + Declarative    |
-
-$${\color{red}\textbf{# Advantages of Terraform}}$$
-
-- **Multi-Cloud Support:** Works across cloud providers.
-- **Infrastructure as Code:** Enables version control and testing.
-- **Consistency:** Reduces errors and increases efficiency.
-- **Flexibility:** Supports quick modifications.
+$${\color{red}\textbf{What are the benefits of infrastructure as code?}}$$
 
 ---
+
+Automation is a key goal across any computing environment. Infrastructure as code (IaC) is used for infrastructure automation to create environments. The most common use of IaC is in software development to build, test, and deploy applications.
+
+Traditionally, system administrators used a combination of scripts and manual processes to set up infrastructure environments. The process was complex and time-consuming. Today, you can use IaC to automatically set up your environment within minutes and manage it more efficiently. We give some benefits next.
+
+$${\color{red}\textbf{Easily duplicate an environment}}$$
+
+The same environment can be deployed on a different system in another location using the same IaC, as long as the infrastructure resources are available.
+
+For example, imagine a business’s regional branch has IaC to describe the whole branch’s enterprise environment, including servers, networking, and custom configurations. If the business opened another regional branch, they could use IaC to duplicate the exact same environment and quickly make the branch online and operational. IaC removes the repetitive manual steps and checklists that were needed in the past.
+
+$${\color{red}\textbf{Reduce configuration errors}}$$
+
+Manual configuration is error-prone due to human involvement. People make mistakes. Or there could be configuration drift due to changes in one setup (like a developer environment) that was missed in another setup (like a test environment).
+
+In contrast, IaC reduces errors and streamlines error checking. If there are errors due to IaC code updates, you can quickly fix the situation by rolling the codebase to the last known stable configuration files. It’s also possible to roll back environments using previous versions of IaC configuration files for other reasons, such as the deployment of older application versions.
+
+$${\color{red}\textbf{Iterate on best-practice environments}}$$
+
+Source control allows software developers to easily build and branch on environments. For instance, imagine that an application grew to include an optional machine learning module. A developer could branch the application’s IaC to initiate, use, and stop a high-performance Amazon Elastic Compute Cloud (Amazon EC2) Trn1 instance. They can set the deployment region as dependent on the region of the application deployment.
+
+![image](https://github.com/user-attachments/assets/3e1bb3a7-3c91-4b28-be03-acec2e5da4d1)
+
+$${\color{red}\textbf{What is the role of IaC in DevOps?}}$$
+
+---
+
+DevOps is the process of improving collaboration between software development and IT operations teams. It aims to shorten the application development lifecycle and provide continuous delivery of high-quality software. DevOps teams integrate operations activities with developer tools and code commits, so applications can have extremely rapid release cycles.
+
+A key goal of DevOps is to automate infrastructure tasks across the development process. You can integrate infrastructure as code (IaC) into continuous integration and continuous deployment (CI/CD) pipelines. This way, when software goes through its build and release process, the necessary infrastructure changes can be made in tandem.
+
+$${\color{red}\textbf{DevOps teams use infrastructure as code for many purposes:}}$$
+
+- Quickly set up complete environments, from development to production
+- Help ensure consistently reproducible configurations between environments
+- Integrate seamlessly with cloud providers and efficiently scale infrastructure resources up or down based on demand
+
+IaC provides a common language for both developers and operations. Changes can be reviewed in a transparent manner, which fosters better collaboration in a DevOps environment.
+
+$${\color{red}\textbf{What is Terraform}}$$
+
+Terraform is an infrastructure as code tool that lets you build, change, and version cloud and on-prem resources safely and efficiently.
+
+HashiCorp Terraform is an infrastructure as code tool that lets you define both cloud and on-prem resources in human-readable configuration files that you can version, reuse, and share. You can then use a consistent workflow to provision and manage all of your infrastructure throughout its lifecycle. Terraform can manage low-level components like compute, storage, and networking resources, as well as high-level components like DNS entries and SaaS features.
+
+$${\color{red}\textbf{How does Terraform work?}}$$
+
+---
+
+Terraform creates and manages resources on cloud platforms and other services through their application programming interfaces (APIs). Providers enable Terraform to work with virtually any platform or service with an accessible API.
+HashiCorp and the Terraform community have already written thousands of providers to manage many different types of resources and services. You can find all publicly available providers on the Terraform Registry, including Amazon Web Services (AWS), Azure, Google Cloud Platform (GCP), Kubernetes, Helm, GitHub, Splunk, DataDog, and many more
+
+![image](https://github.com/user-attachments/assets/502bc56f-9e15-47af-ac41-18d99f09b045)
+
+$${\color{red}\textbf{The core Terraform workflow consists of three stages:}}$$
+
+---
+
+$${\color{red}\textbf{Write:}}$$
+
+You define resources, which may be across multiple cloud providers and services. For example, you might create a configuration to deploy an application on virtual machines in a Virtual Private Cloud (VPC) network with security groups and a load balancer.
+
+$${\color{red}\textbf{Plan:}}$$
+
+Terraform creates an execution plan describing the infrastructure it will create, update, or destroy based on the existing infrastructure and your configuration.
+
+$${\color{red}\textbf{Apply:}}$$
+
+On approval, Terraform performs the proposed operations in the correct order, respecting any resource dependencies. For example, if you update the properties of a VPC and change the number of virtual machines in that VPC, Terraform will recreate the VPC before scaling the virtual machines.
+
+![image](https://github.com/user-attachments/assets/ae00eac9-2141-4fb1-888f-974f09627f32)
+
+$${\color{red}\textbf{Terraform vs Cloudformation}}$$
+
+$${\color{red}\textbf{Multi-Cloud Support}}$$
+
+Terraform is an open-source tool designed for provisioning and managing infrastructure across different cloud providers, such as AWS, Azure, Google Cloud, and on-premise environments. It provides a consistent syntax and workflow when managing resources across different clouds.
+
+CloudFormation is an AWS native service specifically created to provision and manage resources on AWS. Embedded deeply within their ecosystem, this standardized way to describe and deploy infrastructure makes CloudFormation invaluable in meeting resource demand across an AWS environment.
+
+$${\color{red}\textbf{Language and Syntax}}$$
+
+Terraform utilizes HashiCorp
+
 
 
 
