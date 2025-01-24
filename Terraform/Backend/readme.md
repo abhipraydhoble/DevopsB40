@@ -21,6 +21,8 @@ terraform init
 terraform {
  backend "local" {
   path = "terraform.tfstate"
+  }
+}
 ```
 
 ````
