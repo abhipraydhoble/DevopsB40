@@ -109,6 +109,54 @@ region = "us-east-1"
 }
 }
 ```
+10. **Provisioner Block:**
+- The provisioner block in Terraform is a way to run tasks or scripts after a resource is created or updated.
+- It’s like giving Terraform extra instructions to set things up, such as installing software, copying files, or running commands to configure the resource.
+```hcl
+resource "aws_instance" "example" {
+  ami           = "ami-123456"
+  instance_type = "t2.micro"
+
+  provisioner "remote-exec" {
+    inline = [
+      "sudo apt-get update",
+      "sudo apt-get install -y nginx",
+    ]
+  }
+}
+```
+### Key Types of Provisioners:
+1.local-exec:
+- Executes commands on the machine where Terraform is running.
+- Example:
+```hcl
+provisioner "local-exec" {
+  command = "echo 'Hello from Terraform!'"
+}
+```
+2. remote-exec:
+- Runs commands on the remote resource (e.g., a virtual machine) via SSH or WinRM.
+- Example:
+```hcl
+provisioner "remote-exec" {
+  inline = [
+    "sudo apt-get update",
+    "sudo apt-get install -y nginx",
+  ]
+}
+```
+4. file:
+ - Copies files or directories to the remote resource.
+ - Example
+```hcl
+provisioner "file" {
+  source      = "my-config.sh"
+  destination = "/tmp/my-config.sh"
+}
+```
+#### Difference between provisioner block and user data 
+![image](https://github.com/user-attachments/assets/9ee70fec-8844-4e2a-91f8-456db136dcb6)
+
 - suppose i want to create the backend block and bucket resource block at a single time:
 - **ans:** it is not possible because the backend block is create at the **terraform init** because it comes under the terraform block 
 and the bucket is creyed after we plan and apply the code through **terraform plan and terraform apply**
