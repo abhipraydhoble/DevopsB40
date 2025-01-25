@@ -1,5 +1,5 @@
 resource "aws_security_group" "firewall" {
-    name = "devops-b45-sg"
+    name = "dj-saurabh-sg"
     vpc_id = "vpc-0162d6c10ea8e9c4f"
     tags = {
        Environment = "Dev"
@@ -26,22 +26,25 @@ resource "aws_security_group" "firewall" {
 }
 
 resource "aws_instance" "vm-1" {
-    ami = "ami-0bd55ebedabddc3c0"
+    ami = "ami-0c4e27b0c52857dd6"
     instance_type = "t2.micro"
     key_name = "3tier"
+    vpc_security_group_ids = [aws_security_group.firewall.id]
     tags = {
-        Name = "TF-Server"
+        Name = "Dj Saurabh"
     }
-
-    user_data = <<EOF
+    user_data = <<-EOF
     #!/bin/bash
     sudo -i
     yum update -y
     yum install httpd -y
     systemctl start httpd 
     systemctl enable httpd 
-    echo "Helllo Terraform" > /var/www/html/index.html
+    echo "put your hands up for shantabai" > /var/www/html/index.html
 
     EOF
-  
+}
+
+output "public_ip" {
+    value = aws_instance.vm-1.public_ip
 }
