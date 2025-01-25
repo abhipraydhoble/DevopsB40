@@ -1,0 +1,10 @@
+ami_id= "ami-024ea438ab0376a47"
+instance_type="t2.micro"
+key="netflix-instancekey"
+vpc_cidr = "10.0.0.0/16"
+subnet_cidr = "10.0.0.0/23"
+map_public_ip = true
+availability_zone = "ap-northeast-2a"
+route_cidr = "0.0.0.0/0"
+ports = 22
+protocol = "tcp"
