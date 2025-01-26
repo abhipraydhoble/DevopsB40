@@ -29,7 +29,7 @@ terraform {
 - State locking ensures that only one process or task can access or modify a resource or perform a specific operation at a given time.
 - It is crucial in distributed systems to avoid race conditions or conflicts when multiple instances try to perform the same operation simultaneously.
 #### suppose :
-- On AWS account two devops engineer A and B trying to apply the **IaC** code simultaneously oit will create the conflict so to avoid this conflict we use DynamoDb to handle the conflict.
+- On AWS account two devops engineer A and B trying to apply the **IaC** code simultaneously it will create the conflict so to avoid this conflict we use DynamoDb to handle the conflict.
 - DynamoDb will keep waiting one of the devops engineer until first one complete its work.
 ### create the dynamodb table:
 ```hcl
