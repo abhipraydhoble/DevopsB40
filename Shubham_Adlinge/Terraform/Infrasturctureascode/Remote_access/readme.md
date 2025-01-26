@@ -1,5 +1,19 @@
 # Backend Block:
-
+### steps to make the backend to local
+```hcl
+terraform {
+  backend "local" {
+    path = "./terraform.tfstate" # The location to store the state file
+  }
+}
+```
+#### Diference between the --migrate and --reconfigure flags in terraform init command:
+1. --migrate:
+- Migrates the state file to the new backend.
+- Useful when switching to a new backend and you want to move your state.
+2. --reconfigure:
+- Reinitializes the backend and provider configurations.
+- Doesn’t migrate the state. It just reconfigures the setup according to the new settings.
 ### Dynamodb:
 - Amazon DynamoDB is a fully managed NoSQL database service provided by AWS.
 - It is designed for applications requiring high performance at any scale, offering seamless scalability, low latency, and flexible data modeling.
@@ -37,18 +51,4 @@ resource "aws_dynamodb_table" "terraform_locks" {
   }
 }
 ```
-### steps to make the backend to local
-```hcl
-terraform {
-  backend "local" {
-    path = "./terraform.tfstate" # The location to store the state file
-  }
-}
-```
-#### Diference between the --migrate and --reconfigure flags in terraform init command:
-1. --migrate:
-- Migrates the state file to the new backend.
-- Useful when switching to a new backend and you want to move your state.
-2. --reconfigure:
-- Reinitializes the backend and provider configurations.
-- Doesn’t migrate the state. It just reconfigures the setup according to the new settings.
+
