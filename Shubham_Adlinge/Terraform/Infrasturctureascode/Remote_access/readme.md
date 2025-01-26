@@ -7,6 +7,20 @@ terraform {
   }
 }
 ```
+- Initializes a working directory containing Terraform configuration files.
+```bash
+terraform init
+```
+- flags:
+- Forces reconfiguration of the backend, even if it's already configured
+```bash
+terraform init -reconfigure
+```
+- This flag helps in migrating the backend configuration when changing backends
+```bash
+terraform init --migrate
+```
+
 #### Diference between the --migrate and --reconfigure flags in terraform init command:
 1. --migrate:
 - Migrates the state file to the new backend.
