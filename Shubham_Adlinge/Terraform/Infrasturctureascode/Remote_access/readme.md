@@ -25,7 +25,7 @@ terraform {
 - High Availability and Durability
 #### If dynamodb is nosql then why we create table?
 ![alt text](image.png)
-### Expalin statelocking:
+### Explain statelocking:
 - State locking ensures that only one process or task can access or modify a resource or perform a specific operation at a given time.
 - It is crucial in distributed systems to avoid race conditions or conflicts when multiple instances try to perform the same operation simultaneously.
 #### suppose :
