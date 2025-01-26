@@ -7,10 +7,7 @@ data "aws_ami" "latest" {
   }
 }
 
-resource "aws_instance" "example" {
-  ami           = data.aws_ami.latest.id
-  instance_type = "t2.micro"
-}
+
 
 ### calling the data block in instance
 resource "aws_instance" "example" {
