@@ -4,13 +4,13 @@ resource "aws_instance" "example" {
   instance_type = "t2.micro"
 
   # User Data Script
-  user_data = <<-EOT
+  user_data = <<-EOF
               #!/bin/bash
               echo "Hello, World!" > /var/www/html/index.html
               yum install -y httpd
               systemctl start httpd
               systemctl enable httpd
-              EOT
+              EOF
 
   tags = {
     Name = "example-instance"
