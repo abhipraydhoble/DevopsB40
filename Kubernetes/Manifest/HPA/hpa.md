@@ -67,3 +67,16 @@ kubectl apply -f hpa.yaml
 ````
 kubectl get hpa
 ````
+
+````
+kubectl run -i --tty load-generator --image=busybox /bin/sh
+````
+### Inside the container, run:
+````
+while true; do wget -q -O- http://nginx-deployment; done
+````
+### Observe the HPA scaling the pods:
+````
+kubectl get hpa
+kubectl get pods
+````
